@@ -1,0 +1,114 @@
+/* styles.css */
+body {
+    background:#f0f2f8;
+    font-family: 'Segoe UI',sans-serif;
+}
+
+.container {
+    width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+    padding: 32px 24px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+#add-movie-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+#movie-title {
+    flex: 1;
+    padding: 9px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    background: #2384fa;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background: #1c67c1;
+}
+
+.fav-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.movie-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #efefef;
+}
+
+.movie-details {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.movie-title {
+    font-weight: 500;
+    flex: 1;
+}
+
+.stars {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.star {
+    font-size: 22px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.2s;
+}
+.star.selected {
+    color: #ffc502;
+}
+.star:hover,
+.star:hover ~ .star {
+    color: #ffc502;
+}
+
+.rating-info {
+    color: #555;
+    font-size: 13px;
+    min-width: 70px;
+    text-align: center;
+}
+
+.fav-icon {
+    font-size: 22px;
+    cursor: pointer;
+    color: #c8c8c8;
+    transition: color 0.2s;
+    margin-left: 8px;
+}
+.fav-icon.favorited {
+    color: #ec1347;
+}
+
+@media (max-width: 500px) {
+    .container { width: 99%; padding: 14px 8px; }
+}
