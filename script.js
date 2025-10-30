@@ -1,6 +1,7 @@
 // script.js
 const STORAGE_KEY = 'movieRatingsSystemData';
 
+
 const movies = [
     { title: "Inception", ratings: [], favorite: false },
     { title: "Parasite", ratings: [], favorite: false },
@@ -119,3 +120,29 @@ document.getElementById('show-favorites').onchange = () => {
 // Load saved data first, then render
 loadData();
 renderMovies();
+const DARK_MODE_KEY = 'movieRatingsDarkMode';
+const darkModeToggle = document.getElementById('toggle-dark-mode');
+
+function applyDarkMode(isDark) {
+    if (isDark) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+    localStorage.setItem(DARK_MODE_KEY, JSON.stringify(isDark));
+}
+
+// Load saved theme preference on page load
+const savedDarkMode = JSON.parse(localStorage.getItem(DARK_MODE_KEY));
+if (savedDarkMode) {
+    applyDarkMode(true);
+    darkModeToggle.checked = true;
+} else {
+    applyDarkMode(false);
+    darkModeToggle.checked = false;
+}
+
+// Toggle event listener
+darkModeToggle.addEventListener('change', () => {
+    applyDarkMode(darkModeToggle.checked);
+});
