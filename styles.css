@@ -1,4 +1,4 @@
-/* styles.css */
+
 body {
     background:#f0f2f8;
     font-family: 'Segoe UI',sans-serif;
@@ -11,6 +11,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.13);
     padding: 32px 24px;
+    
 }
 
 h1 {
@@ -107,6 +108,40 @@ button:hover {
 }
 .fav-icon.favorited {
     color: #ec1347;
+}
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --container-bg: #1e1e1e;
+  --border-color: #444;
+  --star-color: #555;
+  --star-selected-color: #ffcc33;
+  --fav-color: #888;
+  --fav-favorited-color: #ff5c67;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .container {
+  background-color: var(--container-bg);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Inputs and button colors only, no layout changes */
+body.dark-mode #movie-title {
+  background-color: var(--container-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+body.dark-mode button {
+  background-color: #3a76f0;
+  color: #fff;
+}
+
+body.dark-mode button:hover {
+  background-color: #255ec4;
 }
 
 @media (max-width: 500px) {
